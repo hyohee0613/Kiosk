@@ -1,9 +1,18 @@
 package com.example.kiosk;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        List<MenuItem> menuItems = new ArrayList<>();
+
+        MenuItem menu1 = new MenuItem("ShackBurger", 8.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
+        menuItems.add(menu1);
+
+        System.out.println(menuItems.get(0));
 
         Scanner scan = new Scanner(System.in);
 
