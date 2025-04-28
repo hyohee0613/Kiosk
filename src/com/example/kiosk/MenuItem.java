@@ -18,11 +18,9 @@ public class MenuItem {
         this.description = description;
     }
 
-
     //기능
-//    public List<MenuItem> getMenuItem() {
-//        return menuItems;
-//    }
-
-
+    @Override
+    public String toString() {
+        return name + " | w " + price + " | " + description;
+    }
 }
