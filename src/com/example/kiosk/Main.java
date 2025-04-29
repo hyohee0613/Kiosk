@@ -19,38 +19,9 @@ public class Main {
         menuItems.add(menu3);
         menuItems.add(menu4);
 
-        Scanner scan = new Scanner(System.in);
+        Kiosk kiosk = new Kiosk(menuItems);
+        kiosk.start();
 
-        System.out.println("=================================================================");
-        System.out.println("[SHAKESHACK MENU]");
-
-        for (int i = 0; i <= 3; i++) {
-            System.out.println((i + 1) + ". " + menuItems.get(i));
-        }
-
-        System.out.println("0. 종료");
-        System.out.println("=================================================================");
-
-        System.out.println("원하시는 메뉴의 번호를 입력해주세요.");
-        int input = scan.nextInt();
-
-        switch (input) {
-            case 1:
-                System.out.println("1번 선택");
-                break;
-                case 2:
-                    System.out.println("2번 선택");
-                    break;
-                    case 3:
-                        System.out.println("3번 선택");
-                        break;
-                        case 4:
-                            System.out.println("4번 선택");
-                            break;
-                            case 0:
-                                System.out.println("종료합니다.");
-                                break;
-        }
 
 
 
