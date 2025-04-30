@@ -22,7 +22,7 @@ public class Kiosk {
 
         while (true) {
         System.out.println("=================================================================");
-        System.out.println("[SHAKESHACK MENU]");
+        System.out.println("[MAIN MENU]");
 
         for (int i = 0; i < menu.size(); i++) {
             System.out.println((i + 1) + ". " + menu.get(i).getCategory());
@@ -37,15 +37,19 @@ public class Kiosk {
             int input = scan.nextInt();
 
             if (input == 1) {
-                Menu menu1 = menu.get(input - 1);
+                Menu menu1 = menu.get(0);
                 System.out.println("[BURGER MENU]");
                 menu1.printcategory();
                 break;
             } else if (input == 2) {
-                System.out.println("2번 선택");
+                Menu menu2 = menu.get(1);
+                System.out.println("[DRINK MENU]");
+                menu2.printcategory();
                 break;
             } else if (input == 3) {
-                System.out.println("3번 선택");
+                Menu menu3 = menu.get(2);
+                System.out.println("[SIDE MENU]");
+                menu3.printcategory();
                 break;
             } else if (input == 4) {
                 System.out.println("4번 선택");
