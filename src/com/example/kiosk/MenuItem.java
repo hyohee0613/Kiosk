@@ -6,9 +6,9 @@ import java.util.List;
 public class MenuItem {
 
     // 속성
-    String name;
-    double price;
-    String description;
+    private String name;
+    private double price;
+    private String description;
 
     //생성자
     public MenuItem (String name, double price, String description) {
@@ -22,4 +22,19 @@ public class MenuItem {
     public String toString() {
         return name + " | w " + price + " | " + description;
     }
+
+    //게터
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+
 }

@@ -8,7 +8,7 @@ public class Kiosk {
 
     //키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스
 
-    public List<Menu> menu;
+    private List<Menu> menu;
 
 
     public Kiosk(List<Menu> menu) {
@@ -17,6 +17,11 @@ public class Kiosk {
 
 
     //기능
+
+    public List<Menu> getMenu() {
+        return menu;
+    }
+
     public void start () {
         Scanner scan = new Scanner(System.in);
 
@@ -36,29 +41,34 @@ public class Kiosk {
         try {
             int input = scan.nextInt();
 
-            if (input == 1) {
-                Menu menu1 = menu.get(0);
-                System.out.println("[BURGER MENU]");
-                menu1.printcategory();
+            if (input == 0) {
+                System.out.println("주문을 종료합니다.");
                 break;
-            } else if (input == 2) {
-                Menu menu2 = menu.get(1);
-                System.out.println("[DRINK MENU]");
-                menu2.printcategory();
-                break;
-            } else if (input == 3) {
-                Menu menu3 = menu.get(2);
-                System.out.println("[SIDE MENU]");
-                menu3.printcategory();
-                break;
-            } else if (input == 4) {
-                System.out.println("4번 선택");
-                break;
-            } else if (input == 0) {
-                System.out.println("종료합니다.");
-                break;
-            } else {
-                System.out.println("다시 입력해주세요");
+            }
+
+            if (input >= 1 && input <= menu.size()) {
+                Menu selectMenu = menu.get(input - 1);
+                System.out.println("[" + selectMenu.getCategory() + " MENU]");
+                selectMenu.printcategory();
+
+                System.out.println("0. 뒤로가기");
+                System.out.println("원하시는 메뉴의 번호를 입력해주세요.");
+
+                int inputItem = scan.nextInt();
+
+                if (inputItem == 0) {
+                    continue;   // 메인 메뉴로
+                }
+
+                List<MenuItem> items = selectMenu.getMenuItems();
+                if (inputItem >= 1 && inputItem <= items.size()) {
+                    MenuItem selectedItem = items.get(inputItem - 1);
+                    System.out.println("선택한 메뉴: \n" + selectedItem);
+                    break;
+
+                } else {
+                    System.out.println("올바른 번호를 입력해주세요.");
+                }
             }
 
         } catch (InputMismatchException e) {

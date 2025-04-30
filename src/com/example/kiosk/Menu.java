@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Menu {
 
-    String category;
-    List<MenuItem> menuItems;
+    private String category;
+    private List<MenuItem> menuItems;
 
     public Menu(String category) {
         this.category = category;
