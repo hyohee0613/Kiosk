@@ -18,6 +18,7 @@ public class MenuItem {
     }
 
     //기능
+    //주소값 출력말고 내가 설정한 대로 출력하기
     @Override
     public String toString() {
         return name + " | w " + price + " | " + description;

@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        //개별 메뉴 생성
         List<MenuItem> burgerItems = new ArrayList<>();
         burgerItems.add(new MenuItem("ShackBurger", 8.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         burgerItems.add(new MenuItem("SmokeShack", 9.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
@@ -23,7 +24,7 @@ public class Main {
         sideItems.add(new MenuItem("Ice Cream", 4.0, "바닐라 아이스크림"));
         sideItems.add(new MenuItem("Chicken Bites", 4.0, "한 입에 먹기 좋은 바삭한 치킨 바이트와 허니 머스터드"));
 
-        // Menu 생성 및 항목 추가
+        // 메뉴 카테고리 추가, 각 개별 항목 추가
         Menu burger = new Menu("Burger");
         for (MenuItem item : burgerItems) {
             burger.getMenuItems().add(item);
