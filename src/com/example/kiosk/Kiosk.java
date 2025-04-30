@@ -8,11 +8,11 @@ public class Kiosk {
 
     //키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스
 
-    public List<MenuItem> menuItems;
+    public List<Menu> menu;
 
 
-    public Kiosk(List<MenuItem> menuItems) {
-        this.menuItems = menuItems;
+    public Kiosk(List<Menu> menu) {
+        this.menu = menu;
     }
 
 
@@ -24,8 +24,8 @@ public class Kiosk {
         System.out.println("=================================================================");
         System.out.println("[SHAKESHACK MENU]");
 
-        for (int i = 0; i <= 3; i++) {
-            System.out.println((i + 1) + ". " + menuItems.get(i));
+        for (int i = 0; i < menu.size(); i++) {
+            System.out.println((i + 1) + ". " + menu.get(i).getCategory());
         }
 
         System.out.println("0. 종료");
@@ -37,7 +37,9 @@ public class Kiosk {
             int input = scan.nextInt();
 
             if (input == 1) {
-                System.out.println("1번 선택");
+                Menu menu1 = menu.get(input - 1);
+                System.out.println("[BURGER MENU]");
+                menu1.printcategory();
                 break;
             } else if (input == 2) {
                 System.out.println("2번 선택");
@@ -64,10 +66,6 @@ public class Kiosk {
         }
 
     }
-
-    //메뉴추가 메서드
-
-    //메뉴삭제 메서드
 
 
 

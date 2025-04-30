@@ -7,19 +7,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        List<MenuItem> menuItems = new ArrayList<>();
+        List<MenuItem> burgerItems = new ArrayList<>();
 
-        MenuItem menu1 = new MenuItem("ShackBurger", 8.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
-        MenuItem menu2 = new MenuItem("SmokeShack", 9.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
-        MenuItem menu3 = new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
-        MenuItem menu4 = new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거");
+        burgerItems.add(new MenuItem("ShackBurger", 8.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
+        burgerItems.add(new MenuItem("SmokeShack", 9.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
+        burgerItems.add(new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
+        burgerItems.add(new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거"));
 
-        menuItems.add(menu1);
-        menuItems.add(menu2);
-        menuItems.add(menu3);
-        menuItems.add(menu4);
+        // Menu 생성 및 항목 추가
+        Menu burger = new Menu("burger");
+        for (MenuItem item : burgerItems) {
+            burger.getMenuItems().add(item);
+        }
 
-        Kiosk kiosk = new Kiosk(menuItems);
+        // 메뉴 리스트에 추가
+        List<Menu> menu = new ArrayList<>();
+        menu.add(burger);
+
+        Kiosk kiosk = new Kiosk(menu);
         kiosk.start();
 
 

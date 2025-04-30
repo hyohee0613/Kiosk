@@ -9,7 +9,6 @@ public class MenuItem {
     String name;
     double price;
     String description;
-//    List<MenuItem> menuItems = new ArrayList<>();
 
     //생성자
     public MenuItem (String name, double price, String description) {
